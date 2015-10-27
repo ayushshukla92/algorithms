@@ -1,0 +1,55 @@
+#include <iostream>
+#include <algorithm>
+#include <vector>
+
+using namespace std;
+void printV(vector<int> v)
+{
+    for(int i : v)
+        cout<<i<<' ';
+    cout<<endl;
+}
+
+int partition(vector<int> &v,int l, int h)
+{
+    int p = v[l];
+    int eq = l;
+    while(eq<=h)
+    {
+        if(v[eq]==p)
+            eq++;
+        else if(v[eq] > p)
+        {
+            swap(v[eq],v[h]);
+            h--;
+        }
+        else
+        {
+            swap(v[eq],v[l]);
+            l++;
+            eq++;
+        }
+
+    }
+    return eq-1;    
+}
+
+int getK(vector<int> &v, int k, int l, int h)
+{
+    if(l<h){
+    int p = partition(v,l,h);
+    if(p==k)    
+        return v[k];
+     else if(p>k)
+        return getK(v,k,l,p-1);
+    else
+        return getK(v,k,p+1,h);
+}
+}
+
+
+int main(){
+     vector<int> v = {5,0,1,6,7,8,3};
+     cout<<getK(v,0,0,v.size()-1);
+    return 0;
+}
