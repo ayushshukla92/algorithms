@@ -1,0 +1,44 @@
+------------int to string------------
+#include<sstream>
+	stringstream s;
+	s<<12;
+	cout<<s.str();
+	s.str("");
+	s<<34;
+	cout<<s.str();
+
+
+-------------string to int----------------
+
+string a = "25";
+int b = atoi(a.c_str());
+
+---------init string with char--------
+string f="";
+f+=s[0];
+
+------------boundary case--------------
+check the range of int (if it crosses change it to long)
+
+string null
+
+read qn properly and input format!!
+
+make sure while calculating your intermediate steps doesnt cross the range of int
+while((x/nd)/10!=0)    //not x/(nd*10)!=0
+    nd=nd*10;
+
+(*it) as in:
+ set<UndirectedGraphNode*>::iterator it;
+                    for(it=cloneSet.begin();it!=cloneSet.end();it++)
+                    {
+                        if((*it)->label==cn->label)
+                           t2->neighbors.push_back(*it);        
+                    }
+
+--------problem to solve------------
+reverse an array
+prime count
+
+--------------Read----------------
+RedBlack trees
